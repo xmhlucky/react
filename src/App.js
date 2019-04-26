@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{Component} from 'react';
+import { Layout, Menu, Icon } from 'antd';
+import HeaderM from './common/header';
+import ContentM from './common/contentM';
+import Router from './router';
+import 'antd/dist/antd.css';
+import './static/css/common.css';
+const { Header, Content,Sider} = Layout;
+class App extends Component{
+  constructor(props){
+      super(props);
+  };
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  render(){
+    return (
+      <div className="App">
+          <Layout>
+            <Header>
+                <HeaderM />
+            </Header>
+            <ContentM />
+          </Layout>
+      </div>
+    )
+  }
 }
-
 export default App;
