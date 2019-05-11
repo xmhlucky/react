@@ -8,7 +8,7 @@ class LifeCycle extends Component{
 
   render(){
     return (
-      <div class="lifecycle">
+      <div className="lifecycle">
           <Row>
               <Col span={12}>
                 <p>生命周期图解</p>

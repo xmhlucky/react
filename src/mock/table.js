@@ -1,0 +1,33 @@
+//侧边请求
+var Mock = require('mockjs');
+Mock.mock('/tabtable',{
+    commontable:{
+      dataSource:[{
+        id:'001',
+        username:'张三',
+        age:'6',
+        grade:'一年级'
+      },
+      {
+        id:'002',
+        username:'李四',
+        age:'7',
+        grade:'一年级'
+      },
+      {
+        id:'003',
+        username:'王五',
+        age:'6',
+        grade:'一年级'
+      },
+      {
+        id:'004',
+        username:'赵六',
+        age:'6',
+        grade:'一年级'
+      }]
+    },
+    headernav:[
+
+    ]
+});

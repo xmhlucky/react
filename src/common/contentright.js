@@ -8,6 +8,7 @@ import Notice from '../components/react/notice';
 import State from '../components/react/state';
 import ParentProps from '../components/react/propsdemo/parent';
 import { Link} from "react-router-dom";
+import PropTypes from 'prop-types';
 const MenuItem=Menu.Item;
 class ContentRight extends Component{
     constructor(props){
@@ -52,5 +53,8 @@ class ContentRight extends Component{
        )
 
     }
+}
+ContentRight.contextTypes={
+  href:PropTypes.string
 }
 export default ContentRight;

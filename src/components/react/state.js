@@ -5,6 +5,7 @@ class State extends Component{
     super(props);
     this.state={
       number:1
+
     }
   }
   addNumber(){

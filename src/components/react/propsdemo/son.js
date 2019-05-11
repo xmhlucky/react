@@ -10,7 +10,7 @@ class SonProps extends Component{
     }
   }
   render(){
-    let {parenttext,number}=this.props.parentvalue
+    let {parenttext,number}=this.props.parentvalue;
     return (
       <div className="sonprops">
         我是子组件-{parenttext}-{number}

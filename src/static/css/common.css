@@ -82,6 +82,7 @@ sider{
 .ant-menu-horizontal .ant-menu-item:hover,.ant-menu-horizontal .ant-menu-item-selected{
     background: #1E88E5;
     border: 0;
+    top: -1px;
 }
 .ant-menu-horizontal .ant-menu-item:hover a,.ant-menu-horizontal > .ant-menu-item-selected > a{
   color: #fff;
