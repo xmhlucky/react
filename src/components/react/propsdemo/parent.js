@@ -10,12 +10,19 @@ class ParentProps extends Component{
       parenttext:'我是父组件',
       number:1
     }
+    this.changeNumber.bind(this);
+  }
+  changeNumber =()=>{
+    this.setState({
+      number:this.state.number+1
+    })
   }
   render(){
     return (
       <div className="parentprops">
-          <SonProps parentvalue={this.state}/>
-      </div>
+          <p onClick={this.changeNumber}>我是父组件的数值：{this.state.number}</p>
+          <SonProps number={this.state.number} changeNumber={this.changeNumber}/>
+        </div>
     )
   }
 }

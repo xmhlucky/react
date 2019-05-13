@@ -11,16 +11,16 @@ class Jsxgrammar extends Component{
     return (
         <div>
         <p>
-            <img  src={jsxgrammar01}/>
+            <img  src={jsxgrammar01}  alt="语法1"/>
         </p>
         <p>
-            <img  src={jsxgrammar02}/>
+            <img  src={jsxgrammar02}  alt="语法2"/>
         </p>
         <p>
-            <img  src={jsxgrammar03}/>
+            <img  src={jsxgrammar03} alt="语法3"/>
         </p>
           <p>
-              <img  src={jsxgrammar04}/>
+              <img  src={jsxgrammar04} alt="语法4"/>
           </p>
         </div>
     )

@@ -1,19 +1,23 @@
 import React,{Component} from 'react';
-import lifecycleimg from '../../static/images/react/lifecycle/lifecycle.jpg';
+import lifecycleimg from '../../static/images/react/lifecycle/lifecycle.png';
 import { Row, Col } from 'antd';
 class LifeCycle extends Component{
   constructor(props){
     super(props);
-  };
-
+    this.state={
+        number:1
+    }
+  };  
+  
   render(){
+      console.log('render')
     return (
       <div className="lifecycle">
           <Row>
               <Col span={12}>
                 <p>生命周期图解</p>
                 <p>
-                 <img src={lifecycleimg} style={{width:488,height:400}}/>
+                 <img src={lifecycleimg} style={{width:488,height:400}} alt="生命周期"/>
                 </p>
 
               </Col>

@@ -14,7 +14,7 @@ class HelloWrold extends Component{
             一个最简单的React组件实例
         </p>
         <p>
-            <img src={hellowroldimg}/>
+            <img src={hellowroldimg} alt="hellowrold"/>
         </p>
           Hello Wrold
       </div>

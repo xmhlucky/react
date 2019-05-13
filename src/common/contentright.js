@@ -6,6 +6,8 @@ import Jsxgrammar from '../components/react/jsxgrammar';
 import LifeCycle from '../components/react/lifecycle';
 import Notice from '../components/react/notice';
 import State from '../components/react/state';
+import ListRender from '../components/react/list';
+import ReactForm from '../components/react/form'
 import ParentProps from '../components/react/propsdemo/parent';
 import { Link} from "react-router-dom";
 import PropTypes from 'prop-types';
@@ -33,6 +35,12 @@ class ContentRight extends Component{
             break;
         case '/react/props':
             return  <ParentProps />
+            break;
+            case '/react/list':
+            return  <ListRender />
+            break;
+        case '/react/form':
+            return  <ReactForm />
             break;
         case '/react/notice':
               return  <Notice />

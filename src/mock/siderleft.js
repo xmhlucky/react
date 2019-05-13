@@ -28,15 +28,25 @@ Mock.mock('/siderbar',{
         text:'props'
       },
       {
-        key:'/react/notice',
-        router:'/react/notice',
-        text:'注意事项'
-      },
-      {
         key:'/react/lifecycle',
         router:'/react/lifecycle',
         text:'生命周期'
-      }
+      },
+      {
+        key:'/react/list',
+        router:'/react/list',
+        text:'list渲染'
+      },
+      {
+        key:'/react/form',
+        router:'/react/form',
+        text:'form表单'
+      },
+      {
+        key:'/react/notice',
+        router:'/react/notice',
+        text:'注意事项'
+      }      
 
     ],
     headernav:[

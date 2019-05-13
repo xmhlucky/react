@@ -5,15 +5,16 @@ class State extends Component{
     super(props);
     this.state={
       number:1
-
     }
+    this.addNumber.bind(this);
+    this.reduceNumber.bind(this);
   }
-  addNumber(){
+  addNumber = ()=>{
     this.setState({
       number:this.state.number+1
     })
   };
-  reduceNumber(){
+  reduceNumber=()=>{
       this.setState({
         number:this.state.number-1
       })
@@ -23,10 +24,10 @@ class State extends Component{
       <div className="state">
           我当前的数字是：{this.state.number}
           <br/>
-          <Button type="primary" onClick={this.addNumber.bind(this)}>
+          <Button type="primary" onClick={this.addNumber}>
             增加
           </Button>
-          <Button type="primary" onClick={this.reduceNumber.bind(this)}>
+          <Button type="primary" onClick={this.reduceNumber}>
             减少
           </Button>
       </div>
