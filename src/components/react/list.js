@@ -13,14 +13,14 @@ class ListRender extends Component{
         }
     }
     render(){
-    return (
-            <ul>
-                {
-                    this.state.list.map(item=>(<li>{item}</li>))
-                }
-            </ul>
-        )
+        return (
+                <ul>
+                    {
+                        this.state.list.map(item=>(<li key={item}>{item}</li>))
+                    }
+                </ul>
+            )
 
-    }
+        }
 }
 export default ListRender;

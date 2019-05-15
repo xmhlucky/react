@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import PropTypes from 'prop-types';
 import {
   Button
 } from 'antd';
@@ -23,12 +24,12 @@ class SonProps extends Component{
       this.setState({
         parentNumber:nextProps.number
       })
-      console.log('componentWillReceiveProps');      
+      console.log('componentWillReceiveProps');
     }
     shouldComponentUpdate(nextProps, nextState){
       console.log('shouldComponentUpdate')
         if(nextProps.number !== this.state.parentNumber) return true;
-        if(nextProps.number !==this.state.number) return true;       
+        if(nextProps.number !==this.state.number) return true;
         return false;
     }
     componentWillUpdate(nextProps, nextState){
@@ -51,10 +52,19 @@ class SonProps extends Component{
     render(){
       return (
         <div className="sonprops">
-        <p onClick={this.changeSelfNumber}>我是子组件的数值：{this.state.number}</p>
-        <p onClick={this.changeParentNumber}>我是父组件传递过来的值(我在子组件里面)：{this.state.parentNumber}</p>
+            <p onClick={this.changeSelfNumber}>我是子组件的数值：{this.state.number}</p>
+            <p onClick={this.changeParentNumber}>我是父组件传递过来的值(我在子组件里面)：{this.state.parentNumber}</p>
+            <p>{this.props.defaultProps}</p>
         </div>
       )
   }
+}
+SonProps.propTypes ={
+      changeNumber:PropTypes.func,
+      number:PropTypes.number,
+      parentNumber:PropTypes.number
+}
+SonProps.defaultProps={
+   defaultProps:'我是默认属性'
 }
 export default SonProps;

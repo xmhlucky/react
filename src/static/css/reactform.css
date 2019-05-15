@@ -1,0 +1,22 @@
+input,.form select,textarea{
+  width:270px;
+  border: 1px solid #ddd;
+  outline: none;
+  border-radius: 3px;
+  text-indent: 10px;
+}
+.form select{
+  width: 270px;
+
+}
+.form div{
+  margin: 10px 0;
+}
+textarea{
+  resize: none;
+  height: 60px;
+}
+input[type="submit"]{
+  cursor: pointer;
+  
+}

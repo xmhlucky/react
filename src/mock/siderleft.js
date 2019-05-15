@@ -43,10 +43,19 @@ Mock.mock('/siderbar',{
         text:'form表单'
       },
       {
+        key:'/react/proptypes',
+        router:'/react/proptypes',
+        text:'proptypes'
+      },{
+        key:'/react/ref',
+        router:'/react/ref',
+        text:'ref'
+      },
+      {
         key:'/react/notice',
         router:'/react/notice',
         text:'注意事项'
-      }      
+      }
 
     ],
     headernav:[
@@ -65,13 +74,15 @@ Mock.mock('/siderbar',{
       {
         key:'/antd/table',
         router:'/antd/table',
-        text:'table'
-      },
-      {
-        key:'/antd/edittable',
-        router:'/antd/edittable',
-        text:'edittable'
-      },
+        text:'table',
+        children:[
+            {
+              key:'/antd/edittable',
+              router:'/antd/edittable',
+              text:'edittable'
+            }
+        ]
+      },    
       {
         key:'/antd/form',
         router:'/antd/form',

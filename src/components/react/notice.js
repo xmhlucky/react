@@ -4,13 +4,13 @@ import stateselfaddimg from '../../static/images/react/notice/stateselfaddimg.pn
 const confirm = Modal.confirm;
 class Notice extends Component{
   constructor(props){
-    super(props); 
+    super(props);
   }
   delete(){
      confirm({
         title: '温馨提示',
         content: '确定删除这条信息吗？删除后将永远不再显示哦~',
-        okText:'确定',                                                                   
+        okText:'确定',
         onOk() {
             message.info('你已成功删除');
         }
@@ -30,6 +30,7 @@ class Notice extends Component{
                   <Card title="注意点1"   style={{marginBottom:10}} extra={<Icon type="delete" onClick={this.delete.bind(this)} title="删除" style={{cursor:'pointer'}}/>}>
                     <p>class要改为className</p>
                     <p>在使用style样式时,style应该是对象格式。即style=双花括号形式，并且里面的样式，使用驼峰命名法</p>
+                    <p>for 是关键字，所以在react里面用htmlFor来代替for  比如在{"<label>"}标签中，就需要用htmlFor</p>
                   </Card>
                </Col>
              <Col>
@@ -47,8 +48,8 @@ class Notice extends Component{
                     </p>
                     <div>
                        <p>区别：</p>
-                       <img src={stateselfaddimg} />                                               
-                    </div>  
+                       <img src={stateselfaddimg} />
+                    </div>
 
                   </Card>
                </Col>
@@ -70,7 +71,7 @@ class Notice extends Component{
                        <p>在使用style样式时,style应该是对象格式。即style=双花括号形式，并且里面的样式，使用驼峰命名法</p>
                      </Card>
                  </Col>
-           </Row>           
+           </Row>
         </div>
     )
   }

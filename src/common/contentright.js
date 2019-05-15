@@ -7,7 +7,9 @@ import LifeCycle from '../components/react/lifecycle';
 import Notice from '../components/react/notice';
 import State from '../components/react/state';
 import ListRender from '../components/react/list';
-import ReactForm from '../components/react/form'
+import ReactForm from '../components/react/form';
+import ReactRef from '../components/react/ref';
+import ReactPropTypes from '../components/react/propTypes'
 import ParentProps from '../components/react/propsdemo/parent';
 import { Link} from "react-router-dom";
 import PropTypes from 'prop-types';
@@ -41,6 +43,15 @@ class ContentRight extends Component{
             break;
         case '/react/form':
             return  <ReactForm />
+            break;
+        case '/react/PropTypes':
+            return  <ReactPropTypes />
+            break;
+        case '/react/ref':
+            return  <ReactRef />
+            break;
+        case '/react/proptypes':
+            return  <ReactPropTypes/>
             break;
         case '/react/notice':
               return  <Notice />

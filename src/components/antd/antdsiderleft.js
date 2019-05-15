@@ -10,16 +10,15 @@ class AntdSiderLeft extends Component{
          defaultSelectedKeys:this.props.href=='/' || this.props.href=='/antd'? ['/antd/table']:[this.props.href]
        }
     }
-    // slide=(item,index)=>{
-    //   if(item.children && item.children.length>0){
-    //     return (
-    //       <MenuItem key={item.key}>
-    //       {this.slide(item,index).bind(this)}
-    //       </MenuItem>
-    //     )
-    //   }
-    //   return ()
-    // }
+    slide=(item,index)=>{
+      if(item.children && item.children.length>0){
+        return (
+          <MenuItem key={item.key}>
+          {this.slide(item,index).bind(this)}
+          </MenuItem>
+        )
+      }
+    }
     render(){
         let siderBar=this.props.siderBar;
         return (

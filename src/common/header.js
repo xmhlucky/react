@@ -11,9 +11,9 @@ class HeaderM extends Component{
 
   }
   getLocationHref(){
-    let href =window.location.pathname;
+    let href =window.location.pathname.split('/')[1];
     this.setState({
-      defaultSelectedKeys:[href]
+      defaultSelectedKeys:href ? [href] : 'react'
     });
   }
 
@@ -28,13 +28,13 @@ class HeaderM extends Component{
             <div className="headerM">
               <Link to="/react" className="logo">前端分享</Link>
               <Menu mode="horizontal" theme="light" defaultSelectedKeys={this.state.defaultSelectedKeys}>
-                <MenuItem key="/react">
+                <MenuItem key="react">
                     <Link to="/react">初识react </Link>
                 </MenuItem>
-                <MenuItem key="/es6">
+                <MenuItem key="es6">
                     <Link to="/es6">es6</Link>
                 </MenuItem>
-                  <MenuItem key="/antd">
+                  <MenuItem key="antd">
                       <Link to="/antd">antd</Link>
                   </MenuItem>
               </Menu>
