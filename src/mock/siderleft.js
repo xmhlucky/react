@@ -52,6 +52,11 @@ Mock.mock('/siderbar',{
         text:'ref'
       },
       {
+        key:'/react/context',
+        router:'/react/context',
+        text:'context'
+      },
+      {
         key:'/react/notice',
         router:'/react/notice',
         text:'注意事项'
@@ -69,39 +74,35 @@ Mock.mock('/siderbar',{
           router:'/es6',
           text:'es6'
         }
-    ],
-    antdsiderbar:[
-      {
-        key:'/antd/table',
-        router:'/antd/table',
-        text:'table',
-        children:[
-            {
-              key:'/antd/edittable',
-              router:'/antd/edittable',
-              text:'edittable'
-            }
-        ]
-      },    
-      {
-        key:'/antd/form',
-        router:'/antd/form',
-        text:'form'
-      },
-      {
-        key:'/antd/tree',
-        router:'/antd/tree',
-        text:'tree',
-        children:[{
-          key:'/antd/tree/commontree',
-          router:'/antd/tree/commontree',
-          text:'普通tree',
-        },
-        {
-          key:'/antd/tree/commontree',
-          router:'/antd/tree/commontree',
-          text:'搜索tree',
-        }]
-      }
     ]
+    //,
+    // antdsiderbar:[
+    //   {
+    //     key:'/antd/table',
+    //     router:'/antd/table',
+    //     text:'table',
+    //     children:[
+    //         {
+    //           key:'/antd/table/edittable',
+    //           router:'/antd/table/edittable',
+    //           text:'edittable'
+    //         }
+    //     ]
+    //   },
+    //   {
+    //     key:'/antd/form',
+    //     router:'/antd/form',
+    //     text:'form'
+    //   },
+    //   {
+    //     key:'/antd/tree',
+    //     router:'/antd/tree',
+    //     text:'tree',
+    //     children:[{
+    //       key:'/antd/tree/commontree',
+    //       router:'/antd/tree/commontree',
+    //       text:'普通tree',
+    //     }]
+    //   }
+    // ]
 });

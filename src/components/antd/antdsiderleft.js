@@ -9,39 +9,32 @@ class AntdSiderLeft extends Component{
        this.state={
          defaultSelectedKeys:this.props.href=='/' || this.props.href=='/antd'? ['/antd/table']:[this.props.href]
        }
+       this.slide=this.slide.bind(this);
     }
-    slide=(item,index)=>{
+    slide=(item)=>{
       if(item.children && item.children.length>0){
+         let itemChildren=item.children;
+          return (
+            <SubMenu key={item.key} title={item.text}>
+               {
+                 itemChildren.map((items)=>this.slide(items))
+               }
+            </SubMenu>
+          )
+      }else{
         return (
-          <MenuItem key={item.key}>
-          {this.slide(item,index).bind(this)}
-          </MenuItem>
+            <MenuItem key={item.key}>
+                <Link to={item.router}>{item.text}</Link>
+            </MenuItem>
         )
       }
     }
     render(){
         let siderBar=this.props.siderBar;
         return (
-          <Menu theme='dark' defaultSelectedKeys={this.state.defaultSelectedKeys}>
+          <Menu theme="dark" defaultSelectedKeys={['/antd/edittable']} mode="inline" defaultOpenKeys={['/antd/table']}>
               {
-                siderBar.map((item,index)=>{
-                  if(item.children && item.children.length>0){
-                      item.children.map((items,index)=>{
-                          return (
-                            <SubMenu key={item.router} title={item.text}>
-                              <MenuItem key={items.key}>
-                                  <Link to={items.router}>{items.text}</Link>
-                              </MenuItem>
-                            </SubMenu>
-                          )
-                      })
-                  }
-                  return (
-                    <MenuItem key={item.key}>
-                        <Link to={item.router}>{item.text}</Link>
-                    </MenuItem>
-                  )
-                })
+                 siderBar.map((item)=>this.slide(item))
               }
 
           </Menu>

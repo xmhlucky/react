@@ -9,7 +9,8 @@ import State from '../components/react/state';
 import ListRender from '../components/react/list';
 import ReactForm from '../components/react/form';
 import ReactRef from '../components/react/ref';
-import ReactPropTypes from '../components/react/propTypes'
+import ReactPropTypes from '../components/react/propTypes';
+import ReactContext from '../components/react/context';
 import ParentProps from '../components/react/propsdemo/parent';
 import { Link} from "react-router-dom";
 import PropTypes from 'prop-types';
@@ -50,8 +51,8 @@ class ContentRight extends Component{
         case '/react/ref':
             return  <ReactRef />
             break;
-        case '/react/proptypes':
-            return  <ReactPropTypes/>
+        case '/react/context':
+            return  <ReactContext/>
             break;
         case '/react/notice':
               return  <Notice />

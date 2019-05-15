@@ -1,8 +1,8 @@
 import React,{Component} from 'react';
-import TabTable from './antdtabtable';
+import TableOpen from './table';
 import HorizontalForm from './antdHorizontalForm';
 import AntdTree from './antdtree';
-import EditTable from './edittable'
+import EditTable from './table/editTable'
 import PropTypes from 'prop-types';
 class AntdContentRight extends Component{
     constructor(props){
@@ -11,7 +11,7 @@ class AntdContentRight extends Component{
     showRight=(href)=>{
       switch (href) {
         case '/antd/table':
-              return  <TabTable />
+              return  <TableOpen />
               break;
         case '/antd/form':
               return  <HorizontalForm />
@@ -20,13 +20,13 @@ class AntdContentRight extends Component{
               return  <AntdTree />
               break;
         case '/antd/tabtable':
-              return  <TabTable />
+              return  <TableOpen />
               break;
         case '/antd/edittable':
               return  <EditTable />
               break;
         default:
-              return  <TabTable />
+              return  <TableOpen />
               break;
       }
     }

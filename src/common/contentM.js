@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types'
 import PrimaryReact from './primaryreact'
 import { Menu } from 'antd';
 import ContentEs from './contentEs';
@@ -18,7 +19,11 @@ class ContentM extends Component{
        href:href
      });
    }
-
+    getChildContext () {
+        let { href } = this.state;
+        console.log(href)
+        return { href };
+    }
    componentWillMount(){
       this.getLocationHref();
    }
@@ -46,5 +51,8 @@ class ContentM extends Component{
         return this.showContent(this.state.href)
 
     }
+}
+ContentM.childContextTypes ={
+  href: PropTypes.string
 }
 export default ContentM;

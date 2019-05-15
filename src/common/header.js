@@ -31,12 +31,7 @@ class HeaderM extends Component{
                 <MenuItem key="react">
                     <Link to="/react">初识react </Link>
                 </MenuItem>
-                <MenuItem key="es6">
-                    <Link to="/es6">es6</Link>
-                </MenuItem>
-                  <MenuItem key="antd">
-                      <Link to="/antd">antd</Link>
-                  </MenuItem>
+                
               </Menu>
             </div>
         )
