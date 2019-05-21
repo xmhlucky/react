@@ -45,7 +45,7 @@ class ContentRight extends Component{
         case '/react/form':
             return  <ReactForm />
             break;
-        case '/react/PropTypes':
+        case '/react/proptypes':
             return  <ReactPropTypes />
             break;
         case '/react/ref':

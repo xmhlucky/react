@@ -21,7 +21,6 @@ class ContentM extends Component{
    }
     getChildContext () {
         let { href } = this.state;
-        console.log(href)
         return { href };
     }
    componentWillMount(){

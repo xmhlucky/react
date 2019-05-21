@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import { Link} from "react-router-dom";
 import {Layout, Menu } from 'antd';
+import PropTypes from 'prop-types';
 const MenuItem=Menu.Item;
 const SubMenu = Menu.SubMenu;
 class AntdSiderLeft extends Component{
@@ -11,6 +12,7 @@ class AntdSiderLeft extends Component{
        }
        this.slide=this.slide.bind(this);
     }
+
     slide=(item)=>{
       if(item.children && item.children.length>0){
          let itemChildren=item.children;
@@ -29,14 +31,17 @@ class AntdSiderLeft extends Component{
         )
       }
     }
+    static contextTypes = {
+       href:PropTypes.string
+    }
     render(){
+        const { href }=this.context;
         let siderBar=this.props.siderBar;
         return (
-          <Menu theme="dark" defaultSelectedKeys={['/antd/edittable']} mode="inline" defaultOpenKeys={['/antd/table']}>
+          <Menu theme="dark" defaultSelectedKeys={[href]} mode="inline" defaultOpenKeys={['/antd/table']}>
               {
                  siderBar.map((item)=>this.slide(item))
               }
-
           </Menu>
         )
     }

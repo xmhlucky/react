@@ -14,7 +14,6 @@ class SiderLeft extends Component{
         let siderBar=this.props.siderBar;
         return (
           <Menu theme='dark' defaultSelectedKeys={this.state.defaultSelectedKeys}>
-
               {
                 siderBar.map((item,index)=>{
                   return (

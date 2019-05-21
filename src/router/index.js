@@ -9,13 +9,14 @@ class Routers extends Component{
         return (
             <BrowserRouter>
                 <Switch>
+                    <Redirect exact from="/react" to="/react/introduction" />
+                    <Redirect exact  from="/antd" to="/antd/table/edittable" />
+                    <Redirect exact from="/" to="/react/introduction" />
                     <Route exact path="" component={App}></Route>
                     <Route exact path="/react:name" component={ContentM}></Route>
                     <Route exact path="/es6" component={ContentEs}></Route>
                     <Route exact path="/antd:name" component={ContentAntd}></Route>
-                    <Redirect from="/react" to="/react/introduction" />
-                    <Redirect from="/antd" to="/antd/table" />
-                    <Redirect from="/" to="/react/introduction" />
+
                 </Switch>
             </BrowserRouter>
         )

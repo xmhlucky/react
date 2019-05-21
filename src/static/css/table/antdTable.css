@@ -1,0 +1,9 @@
+.tableHeader{
+  display: flex;
+  justify-content:space-between;
+  margin-bottom: 20px;
+
+}
+.tableHeader .searchInput{
+  width: 220px;
+}

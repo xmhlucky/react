@@ -74,35 +74,59 @@ Mock.mock('/siderbar',{
           router:'/es6',
           text:'es6'
         }
+    ],
+    antdsiderbar:[
+      {
+        key:'/antd/table',
+        router:'/antd/table',
+        text:'table',
+        children:[
+            {
+              key:'/antd/table/checktable',
+              router:'/antd/table/checktable',
+              text:'checktable'
+            },
+            {
+              key:'/antd/table/filtertable',
+              router:'/antd/table/filtertable',
+              text:'filtertable'
+            },
+            {
+              key:'/antd/table/unfoldtable',
+              router:'/antd/table/unfoldtable',
+              text:'unfoldtable'
+            },
+            {
+              key:'/antd/table/sumtablehead',
+              router:'/antd/table/sumtablehead',
+              text:'sumtablehead'
+            },
+            {
+              key:'/antd/table/edittable',
+              router:'/antd/table/edittable',
+              text:'edittable'
+            },
+            {
+              key:'/antd/table/tableparams',
+              router:'/antd/table/tableparams',
+              text:'tableparams'
+            }
+        ]
+      },
+      {
+        key:'/antd/form',
+        router:'/antd/form',
+        text:'form'
+      },
+      {
+        key:'/antd/tree',
+        router:'/antd/tree',
+        text:'tree',
+        children:[{
+          key:'/antd/tree/commontree',
+          router:'/antd/tree/commontree',
+          text:'普通tree',
+        }]
+      }
     ]
-    //,
-    // antdsiderbar:[
-    //   {
-    //     key:'/antd/table',
-    //     router:'/antd/table',
-    //     text:'table',
-    //     children:[
-    //         {
-    //           key:'/antd/table/edittable',
-    //           router:'/antd/table/edittable',
-    //           text:'edittable'
-    //         }
-    //     ]
-    //   },
-    //   {
-    //     key:'/antd/form',
-    //     router:'/antd/form',
-    //     text:'form'
-    //   },
-    //   {
-    //     key:'/antd/tree',
-    //     router:'/antd/tree',
-    //     text:'tree',
-    //     children:[{
-    //       key:'/antd/tree/commontree',
-    //       router:'/antd/tree/commontree',
-    //       text:'普通tree',
-    //     }]
-    //   }
-    // ]
 });
