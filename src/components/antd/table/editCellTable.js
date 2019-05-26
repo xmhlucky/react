@@ -24,31 +24,31 @@ export default class EditCellTable extends Component{
        rules:nextProps.rules
      })
   }
-  onChange=(e)=>{
+  onChange=(value)=>{
      let { names }=this.props;
-     this.props.onChange(names,e.target.value);
+     this.props.onChange(names,value);
+     this.setState({
+       [names]:value
+     })
   }
   editRowContent=()=>{
-     let {type,value,options,names}=this.state;
-     let {rules}=this.props;
+     let {type,value,options,names,rules}=this.state;
      switch (type) {
        case 'input':
-         return <BindForm  names={names} initialValue={value} rules={rules}>
-                   <Input onChange={(e)=>{this.onChange(e)}}/>
-                </BindForm>
+         return <Input value={value} onChange={(e)=>{this.onChange(e.target.value)}}/>
          break;
        case 'number':
-          return <InputNumber value={value}/>
+          return <InputNumber value={value} onChange={(val)=>{this.onChange(val)}}/>
           break;
        case 'select':
-         return <Select>
+         return <Select value={value} onChange={(val)=>{this.onChange(val)}}>
                    {
                      options && options.map((item)=><Option key={item.value} value={item.value}>{item.text}</Option>)
                    }
                 </Select>
          break;
        default:
-         return <Input value={value}/>
+         return <Input value={value} onChange={(e)=>{this.onChange(e.target.value)}}/>
 
      }
   }

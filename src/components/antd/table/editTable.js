@@ -1,15 +1,16 @@
 import React,{Component} from 'react';
-import {Table,Divider} from 'antd';
+import {Table,Divider,Modal} from 'antd';
 import axios from 'axios';
 import '../../../mock/table/tabledata';
 import EditCellTable from './editCellTable';
+const confirm = Modal.confirm;
+const _ = require('lodash');
 export default class EditTable extends Component{
   constructor(props){
     super(props);
     this.state={
       dataSource:[],
       curIndex:'',
-
     }
     this.number=0;
   }
@@ -27,6 +28,7 @@ export default class EditTable extends Component{
            console.log(error)
          })
   }
+  //编辑
   editRow=(type,index)=>{
        let { dataSource }=this.state;
        let curItem=dataSource[index];
@@ -42,7 +44,52 @@ export default class EditTable extends Component{
        }
   }
   onChange=(key,value)=>{
-    console.log(key,value)
+    let {curIndex,dataSource}=this.state;
+    let curItem=dataSource[curIndex];
+    curItem[key]=value;
+    dataSource.splice(curIndex,1,curItem);
+    this.setState({
+        dataSource
+    })
+  }
+  //保存
+  onSaveData=(record,index)=>{
+    let {dataSource}=this.state;
+    delete record.editing;
+    dataSource.splice(index,1,record);
+    this.setState({
+      dataSource
+    });
+    this.number=0;
+  }
+  //删除
+  deleteRow=(index)=>{
+    let {dataSource,curIndex}=this.state;
+    confirm({
+        title: '确定的删除吗？',
+        onOk:()=>{
+          dataSource.splice(index,1);
+          if(this.number){
+            curIndex=index<curIndex ?curIndex-1 :curIndex;
+
+          }
+          this.setState({
+            dataSource,
+            curIndex
+          })
+        }
+      });
+
+  }
+  //取消
+  onCancel=(index)=>{
+    let {dataSource,curIndex}=this.state;
+    delete dataSource[curIndex].editing;
+    this.setState({
+      dataSource
+    });
+    this.number=0;
+
   }
   getColumns(){
      return [
@@ -57,11 +104,6 @@ export default class EditTable extends Component{
                           value={value}
                           names="username"
                           onChange={this.onChange}
-                          rules={{
-                                    require:true,
-                                    max:3
-                                  }
-                                }
                        />
               }
            },
@@ -73,7 +115,9 @@ export default class EditTable extends Component{
                 return <EditCellTable
                           editing={record.editing}
                           value={value}
+                          names="age"
                           type="number"
+                          onChange={this.onChange}
                        />
               }
            },
@@ -86,6 +130,7 @@ export default class EditTable extends Component{
                           editing={record.editing}
                           value={value}
                           type="select"
+                          names="gender"
                           options={[{
                             text:'保密',
                             value:''
@@ -96,6 +141,7 @@ export default class EditTable extends Component{
                             text:'女',
                             value:'woman'
                           }]}
+                          onChange={this.onChange}
                        />
               }
            },
@@ -107,21 +153,28 @@ export default class EditTable extends Component{
                return <EditCellTable
                          editing={record.editing}
                          value={value}
+                         names="address"
+                         onChange={this.onChange}
                       />
              }
            },
            {
             title: 'operation',
             dataIndex: 'operation',
-            render: (text, record,index) =>{
-               return (
-                 <div>
-                     <a href="javascipt:;" onClick={()=>this.editRow('edit',index)}>编辑</a>
-                     <Divider type="vertical"/>
-                     <a href="javascipt:;">删除</a>
-                 </div>
-               )
-            }
+            render: (text, record,index) =>(
+                <div>
+                      {
+                        record.editing ?
+                         (<div><a href="javascipt:;" onClick={()=>this.onSaveData(record,index)}>保存</a>
+                         <Divider type="vertical"/>
+                         <a href="javascipt:;" onClick={()=>{this.onCancel(index)}}>取消</a></div>)
+                     :
+                         (<div><a href="javascipt:;" onClick={()=>{this.editRow('edit',index)}}>编辑</a>
+                         <Divider type="vertical"/>
+                         <a href="javascipt:;" onClick={()=>this.deleteRow(index)}>删除</a></div>)
+                       }
+                </div>
+              )
           }
       ]
   }
