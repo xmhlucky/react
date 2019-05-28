@@ -2,32 +2,27 @@ import React,{Component} from 'react';
 import TableOpen from './table';
 import HorizontalForm from './antdHorizontalForm';
 import AntdTree from './antdtree';
-import EditTable from './table/editTable';
-import FilterTable from './table/filterTable';
+import AntdTransfer from './transfer';
 import PropTypes from 'prop-types';
 class AntdContentRight extends Component{
     constructor(props){
       super(props);
     }
     showRight=(href)=>{
-      switch (href) {
-        case '/antd/table':
+      let arrHref=href.split('/');
+      let newHref=arrHref[1]+'/'+arrHref[2];
+      switch (newHref) {
+        case 'antd/table':
               return  <TableOpen />
               break;
-        case '/antd/form':
+        case 'antd/form':
               return  <HorizontalForm />
               break;
-        case '/antd/tree':
+        case 'antd/tree':
               return  <AntdTree />
               break;
-        case '/antd/tabtable':
-              return  <TableOpen />
-              break;
-        case '/antd/filtertable':
-              return  <FilterTable />
-              break;
-        case '/antd/edittable':
-              return  <EditTable />
+        case 'antd/transfer':
+              return  <AntdTransfer />
               break;
         default:
               return  <TableOpen />

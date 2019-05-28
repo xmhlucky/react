@@ -33,22 +33,23 @@ export default class EditCellTable extends Component{
   }
   editRowContent=()=>{
      let {type,value,options,names,rules}=this.state;
+     let props=this.props;
      switch (type) {
        case 'input':
-         return <Input value={value} onChange={(e)=>{this.onChange(e.target.value)}}/>
+         return <Input {...props} value={value} onChange={(e)=>{this.onChange(e.target.value)}}/>
          break;
        case 'number':
-          return <InputNumber value={value} onChange={(val)=>{this.onChange(val)}}/>
+          return <InputNumber {...props}  value={value} onChange={(val)=>{this.onChange(val)}}/>
           break;
        case 'select':
-         return <Select value={value} onChange={(val)=>{this.onChange(val)}}>
+         return <Select {...props} value={value} onChange={(val)=>{this.onChange(val)}}>
                    {
                      options && options.map((item)=><Option key={item.value} value={item.value}>{item.text}</Option>)
                    }
                 </Select>
          break;
        default:
-         return <Input value={value} onChange={(e)=>{this.onChange(e.target.value)}}/>
+         return <Input value={value} {...props} onChange={(e)=>{this.onChange(e.target.value)}}/>
 
      }
   }

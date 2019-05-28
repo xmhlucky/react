@@ -16,7 +16,6 @@ export default class FilterTable extends Component{
     console.log(2)
      axios.get('/table')
           .then((result)=>{
-            console.log(result)
             this.setState({
               dataSource:result.data.checkTable
             })

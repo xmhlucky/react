@@ -107,6 +107,11 @@ Mock.mock('/siderbar',{
               text:'edittable'
             },
             {
+              key:'/antd/table/nesttable',
+              router:'/antd/table/nesttable',
+              text:'nesttable'
+            },
+            {
               key:'/antd/table/tableparams',
               router:'/antd/table/tableparams',
               text:'tableparams'
@@ -127,6 +132,32 @@ Mock.mock('/siderbar',{
           router:'/antd/tree/commontree',
           text:'普通tree',
         }]
+      },
+      {
+        key:'/antd/transfer',
+        router:'/antd/transfer',
+        text:'transfer',
+        children:[{
+          key:'/antd/transfer/ordinarytransfer',
+          router:'/antd/transfer/ordinarytransfer',
+          text:'普通穿梭框',
+        },
+        {
+          key:'/antd/transfer/searchtransfer',
+          router:'/antd/transfer/searchtransfer',
+          text:'带搜索的穿梭框',
+        },
+        {
+          key:'/antd/transfer/tabletransfer',
+          router:'/antd/transfer/tabletransfer',
+          text:'table穿梭框',
+        },
+        {
+          key:'/antd/transfer/treetransfer',
+          router:'/antd/transfer/treetransfer',
+          text:'tree穿梭框',
+        }
+      ]
       }
     ]
 });

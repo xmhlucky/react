@@ -102,6 +102,7 @@ export default class EditTable extends Component{
                           type="input"
                           editing={record.editing}
                           value={value}
+                          style={{width:200}}
                           names="username"
                           onChange={this.onChange}
                        />
@@ -117,6 +118,7 @@ export default class EditTable extends Component{
                           value={value}
                           names="age"
                           type="number"
+                          style={{width:200}}
                           onChange={this.onChange}
                        />
               }
@@ -153,6 +155,7 @@ export default class EditTable extends Component{
                return <EditCellTable
                          editing={record.editing}
                          value={value}
+                         style={{width:200}}
                          names="address"
                          onChange={this.onChange}
                       />
