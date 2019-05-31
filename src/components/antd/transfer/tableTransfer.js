@@ -88,6 +88,7 @@ export default class TransferTable extends Component{
       targetKeys: originTargetKeys,
       disabled: false,
       showSearch: false,
+      direction:"right"
     }
   }
   onChange = nextTargetKeys => {
@@ -101,34 +102,20 @@ export default class TransferTable extends Component{
     this.setState({ showSearch });
   };
   render(){
-    const { targetKeys, disabled, showSearch } = this.state;
+    const { targetKeys, disabled, showSearch,direction } = this.state;
     return(
       <div>
         <TableTransfer
-          dataSource={mockData}
-          targetKeys={targetKeys}
-          disabled={disabled}
-          showSearch={showSearch}
-          onChange={this.onChange}
-          filterOption={(inputValue, item) =>
-            item.title.indexOf(inputValue) !== -1 || item.tag.indexOf(inputValue) !== -1
-          }
-          leftColumns={leftTableColumns}
-          rightColumns={rightTableColumns}
-        />
-        <Switch
-          unCheckedChildren="disabled"
-          checkedChildren="disabled"
-          checked={disabled}
-          onChange={this.triggerDisable}
-          style={{ marginTop: 16 }}
-        />
-        <Switch
-          unCheckedChildren="showSearch"
-          checkedChildren="showSearch"
-          checked={showSearch}
-          onChange={this.triggerShowSearch}
-          style={{ marginTop: 16 }}
+            targetKeys={targetKeys}
+            titles={['Source', 'Target']}
+            dataSource={mockData}
+            showSelectAll={false}
+            onChange={this.onChange}
+            filterOption={(inputValue, item) =>
+              item.title.indexOf(inputValue) !== -1 || item.tag.indexOf(inputValue) !== -1
+            }
+            leftColumns={leftTableColumns}
+            rightColumns={rightTableColumns}
         />
       </div>
     )

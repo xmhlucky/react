@@ -121,7 +121,32 @@ Mock.mock('/siderbar',{
       {
         key:'/antd/form',
         router:'/antd/form',
-        text:'form'
+        text:'form',
+        children:[{
+          key:'/antd/form/primaryform',
+          router:'/antd/form/primaryform',
+          text:'primaryform',
+        },
+        {
+          key:'/antd/form/verifyform',
+          router:'/antd/form/verifyform',
+          text:'verifyform',
+        },
+        {
+          key:'/antd/form/myform',
+          router:'/antd/form/myform',
+          text:'myform',
+        },
+        {
+          key:'/antd/form/myformnew',
+          router:'/antd/form/myformnew',
+          text:'myformnew',
+        },
+        {
+          key:'/antd/form/upload',
+          router:'/antd/form/upload',
+          text:'upload',
+        }]
       },
       {
         key:'/antd/tree',

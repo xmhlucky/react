@@ -1,53 +1,80 @@
 import React,{Component} from 'react';
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types'
-import PrimaryReact from './primaryreact'
-import { Menu } from 'antd';
-import ContentEs from './contentEs';
-import ContentAntd from './contentAntd';
+import '../mock/siderleft.js';
+import ContentRight from './contentright';
+import SiderLeft from './siderleft';
+import axios from 'axios';
+import {Layout,Menu} from 'antd';
+let {Sider,Content} = Layout;
 const MenuItem=Menu.Item;
 class ContentM extends Component{
    constructor(props){
      super(props);
      this.state={
-       href:''
+       href:'',
+       siderBar:[]
      }
    };
-   getLocationHref(){
+   getLocationHref=()=>{
      var href =window.location.pathname;
      this.setState({
        href:href
+     },()=>{
+       this.setLeftBar();
      });
    }
+    static contextTypes = {
+       href:PropTypes.string
+    }
     getChildContext () {
         let { href } = this.state;
         return { href };
     }
-   componentWillMount(){
-      this.getLocationHref();
+    setLeftBar=()=>{
+      const {href,siderBar} =this.state;
+      const hrefurl=href.split('/')[1];
+      let bar=[];
+      axios.get('/siderbar')
+           .then((result)=>{
+              switch (hrefurl) {
+                case 'react':
+                  bar=result.data.reactsiderbar;
+                  break;
+                case 'antd':
+                  bar=result.data.antdsiderbar;
+                  break;
+                case 'es6':
+                  bar=result.data.essiderbar;
+                  break;
+                default:
+                 bar=result.data.reactsiderbar;
+              }
+              this.setState({
+                siderBar:bar
+              });
+           })
+           .catch((error)=>{
+              console.log(error)
+           })
+    }
+   componentDidMount(){
+     this.getLocationHref();
    }
-   showContent=(href)=>{
-     let hrefurl=href.split('/')[1];
-       switch (hrefurl) {
-         case 'react':
-               return  <PrimaryReact href={href}/>
-               break;
-         case 'es6':
-               return  <ContentEs href={href}/>
-               break;
-        case 'antd':
-              return  <ContentAntd href={href}/>
-              break;
-         default:
-               return  <PrimaryReact  href={href}/>
-               break;
-       }
+   componentWillReceiveProps(){
+     this.getLocationHref();
    }
-    componentWillReceiveProps(){
-        this.getLocationHref();
-    };
     render(){
-        return this.showContent(this.state.href)
+        return (
+            <Layout>
+                <Sider>
+                    <SiderLeft siderBar={this.state.siderBar}/>
+                </Sider>
+                <Content style={{background:'#fff',padding:20}}>
+                    <ContentRight />
+                </Content>
+            </Layout>
+        )
 
     }
 }

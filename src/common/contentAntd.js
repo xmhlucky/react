@@ -1,39 +1,24 @@
 import React,{Component} from 'react';
 import AntdSiderLeft from '../components/antd/antdsiderleft';
 import AntdContentRight from '../components/antd/antdcontentright';
-import '../mock/siderleft.js';
-import axios from 'axios';
-import {Layout} from 'antd';
-let {Sider,Content} = Layout;
+import PropTypes from 'prop-types'
+
 class ContentAntd extends Component{
+  static contextTypes = {
+     href:PropTypes.string
+  }
   constructor(props){
     super(props);
     this.state={
-      antdSiderBar:[]
+      siderBar:[]
     }
+
   }
-  componentWillMount(){
-    axios.get('/siderbar')
-         .then((result)=>{
-            this.setState({
-              antdSiderBar:result.data.antdsiderbar
-            });
-         })
-         .catch((error)=>{
-            console.log(error)
-         })
-  }
+
+
   render(){
-    return (
-        <Layout>
-            <Sider>
-                <AntdSiderLeft href={this.props.href} siderBar={this.state.antdSiderBar}/>
-            </Sider>
-            <Content style={{background:'#fff',padding:20}}>
-                <AntdContentRight  href={this.props.href}/>
-            </Content>
-        </Layout>
-    )
+return ('')
+
   }
 }
 export default ContentAntd;

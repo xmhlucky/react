@@ -40,7 +40,6 @@ class HeaderM extends Component{
                 <MenuItem key="es6">
                     <Link to="/es6">es6</Link>
                 </MenuItem>
-
               </Menu>
             </div>
         )
