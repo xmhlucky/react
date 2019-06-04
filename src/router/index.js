@@ -9,6 +9,7 @@ class Routers extends Component{
                 <Switch>
                     <Redirect exact from="/react" to="/react/introduction" />
                     <Redirect exact  from="/antd" to="/antd/table/edittable" />
+                    <Redirect exact  from="/es6" to="/es6/promise" />
                     <Redirect exact from="/" to="/react/introduction" />
                     <Route exact path="" component={App}></Route>
                 </Switch>

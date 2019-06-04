@@ -184,5 +184,37 @@ Mock.mock('/siderbar',{
         }
       ]
       }
+    ],
+    essiderbar:[
+      {
+        key:'/es6/variablesdeclarations',
+        router:'/es6/variablesdeclarations',
+        text:'变量声明'
+      },
+      {
+        key:'/es6/destructuringssignment',
+        router:'/es6/destructuringssignment',
+        text:'变量的解构赋值'
+      },
+      {
+        key:'/es6/stringextends',
+        router:'/es6/stringextends',
+        text:'字符串的扩展'
+      },
+      {
+        key:'/es6/stringaddfun',
+        router:'/es6/stringaddfun',
+        text:'字符串新增的方法'
+      },
+      {
+        key:'/es6/numberextends',
+        router:'/es6/numberextends',
+        text:'数值新增扩展'
+      },
+      {
+        key:'/es6/promise',
+        router:'/es6/promise',
+        text:'promise'
+      }
     ]
 });

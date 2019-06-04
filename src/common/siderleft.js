@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 const MenuItem=Menu.Item;
 const SubMenu = Menu.SubMenu;
 class SiderLeft extends Component{
-   static contextTypes={
-     href:PropTypes.string
-   }
+     static contextTypes={
+       href:PropTypes.string
+     }
     constructor(props){
       super(props);
        this.state={
