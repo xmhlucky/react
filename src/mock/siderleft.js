@@ -212,9 +212,24 @@ Mock.mock('/siderbar',{
         text:'数值新增扩展'
       },
       {
+        key:'/es6/arrextends',
+        router:'/es6/arrextends',
+        text:'数组新增扩展'
+      },
+      {
+        key:'/es6/objectextends',
+        router:'/es6/objectextends',
+        text:'对象新增扩展'
+      },
+      {
         key:'/es6/promise',
         router:'/es6/promise',
         text:'promise'
+      },
+      {
+        key:'/es6/module',
+        router:'/es6/module',
+        text:'module语法'
       }
     ]
 });
