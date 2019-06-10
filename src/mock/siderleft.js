@@ -231,5 +231,17 @@ Mock.mock('/siderbar',{
         router:'/es6/module',
         text:'module语法'
       }
+    ],
+    reduxsiderbar:[
+      {
+        key:'/redux/todolist',
+        router:'/redux/todolist',
+        text:'todolist'
+      },
+      {
+        key:'/redux/shoppingcart',
+        router:'/redux/shoppingcart',
+        text:'shoppingcart'
+      }
     ]
 });

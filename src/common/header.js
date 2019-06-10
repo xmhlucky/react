@@ -40,6 +40,9 @@ class HeaderM extends Component{
                 <MenuItem key="es6">
                     <Link to="/es6">es6</Link>
                 </MenuItem>
+                <MenuItem key="redux">
+                    <Link to="/redux">redux</Link>
+                </MenuItem>
               </Menu>
             </div>
         )

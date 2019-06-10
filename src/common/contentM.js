@@ -47,6 +47,9 @@ class ContentM extends Component{
                 case 'es6':
                   bar=result.data.essiderbar;
                   break;
+                case 'redux':
+                  bar=result.data.reduxsiderbar;
+                  break;
                 default:
                  bar=result.data.reactsiderbar;
               }
