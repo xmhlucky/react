@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+ import React,{Component} from 'react';
 import { Menu, Divider } from 'antd';
 import Introduction from './introduction';
 import HelloWrold from './hellowrold';

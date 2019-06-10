@@ -50,6 +50,9 @@ class ContentM extends Component{
                 case 'redux':
                   bar=result.data.reduxsiderbar;
                   break;
+                case 'router':
+                  bar=result.data.reactRouter;
+                  break;
                 default:
                  bar=result.data.reactsiderbar;
               }

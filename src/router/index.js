@@ -11,6 +11,7 @@ class Routers extends Component{
                     <Redirect exact  from="/antd" to="/antd/table/edittable" />
                     <Redirect exact  from="/es6" to="/es6/promise" />
                     <Redirect exact from="/" to="/react/introduction" />
+                    <Redirect exact from="/router" to="/router/history" />
                     <Route exact path="" component={App}></Route>
                 </Switch>
             </BrowserRouter>

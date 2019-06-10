@@ -4,6 +4,7 @@ import ReactContentRight from '../components/react';
 import AntdContentRight from '../components/antd';
 import EsContentRight from '../components/es6';
 import ReduxContentRight from '../components/redux';
+import RouterContentRight from '../components/router';
 class ContentRight extends Component{
   static contextTypes = {
      href:PropTypes.string
@@ -33,6 +34,9 @@ class ContentRight extends Component{
          case 'es6':
            return <EsContentRight />
            break;
+         case 'router':
+            return <RouterContentRight />
+            break;
          case 'redux':
            return <ReduxContentRight />
            break;

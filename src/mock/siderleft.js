@@ -243,5 +243,12 @@ Mock.mock('/siderbar',{
         router:'/redux/shoppingcart',
         text:'shoppingcart'
       }
+    ],
+    reactRouter:[
+        {
+          key:'/router/history',
+          router:'/router/history',
+          text:'history跳转'
+        },
     ]
 });
